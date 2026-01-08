@@ -241,14 +241,7 @@ export default function SecretAgencyAccessScreen() {
             <div className="grid gap-4">
               <div className="grid gap-3">
                 <div className="flex items-center justify-between gap-3 text-xs font-semibold tracking-[0.28em] text-slate-300">
-                  <span className="inline-flex items-center gap-2">
-                    <span className="h-2 w-2 rounded-full bg-fuchsia-400 shadow-[0_0_18px_rgba(232,121,249,0.9)]" />
-                    AMANDA
-                  </span>
-                  <span className="inline-flex items-center gap-2">
-                    <span className="h-2 w-2 rounded-full bg-cyan-300 shadow-[0_0_18px_rgba(34,211,238,0.9)]" />
-                    GABRIEL
-                  </span>
+                 
                 </div>
 
                 <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4">
