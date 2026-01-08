@@ -2,7 +2,7 @@ import { AlertTriangle, Lock, Shield } from 'lucide-react'
 import { useEffect, useMemo, useRef, useState } from 'react'
 import type { ClipboardEvent, KeyboardEvent } from 'react'
 
-const SECRET_MESSAGE = 'casa da sanja, cozinha, gaveta, em baixo dos panos de prato'
+const SECRET_MESSAGE = 'casa da sanja, cozinha, gaveta, sob os panos'
 
 type Status = 'idle' | 'error' | 'amanda' | 'gabriel' | 'success'
 
