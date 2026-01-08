@@ -3,52 +3,37 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-  --primary: #FED835;
-  --secondary: #304fff;
-
-  --primary-accent: #e5c230;
-  --foreground-accent: #454545;
-  --hero-background: #F3F3F5;
-}
-
-html {
-  @apply scroll-smooth;
+  --background: #020617; /* Slate 950 */
+  --foreground: #ffffff;
 }
 
 body {
-  @apply text-lg;
-  
   color: var(--foreground);
   background: var(--background);
-  font-family: "Source Sans 3", sans-serif;
-  font-optical-sizing: auto;
-  font-style: normal;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+  
+  /* Efeito de digitação */
+  .typing-effect {
+    border-right: 2px solid white;
+    white-space: pre-wrap;
+    overflow: hidden;
+    animation: blink-caret 0.75s step-end infinite;
+  }
+  
+  /* Fundo quadriculado sutil */
+  .bg-grid-pattern {
+    background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
 }
 
-.manrope {
-  font-family: "Manrope", sans-serif;
-  font-optical-sizing: auto;
-  font-style: normal;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: "Manrope", sans-serif;
-  font-optical-sizing: auto;
-  font-style: normal;
-}
-
-#logos svg {
-  @apply w-fit h-10 sm:h-12;
-}
-
-.benefit-section:last-of-type > div {
-  @apply mb-10;
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: white }
 }
