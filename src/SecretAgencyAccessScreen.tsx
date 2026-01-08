@@ -25,7 +25,7 @@ export default function SecretAgencyAccessScreen() {
     return `${time}${noise}`
   })
 
-  const code = useMemo(() => digits.join(''), [digits])
+  const code = useMemo(() => digits.map(p => !p ? '0' : p).join(''), [digits])
 
   useEffect(() => {
     inputRefs.current[0]?.focus()
