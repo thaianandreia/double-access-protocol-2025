@@ -1,7 +1,9 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { Lock, Unlock, AlertTriangle, ShieldCheck, Eye, EyeOff, Minus, Activity } from 'lucide-react';
+'use client';
 
-export default function SecuritySystem() {
+import React, { useState, useRef, useEffect } from 'react';
+import { Lock, Unlock, AlertTriangle, ShieldCheck, Eye, Minus, Activity } from 'lucide-react';
+
+export default function Home() {
   const FIXED_CODE = "28461973";
 
   // Estado para armazenar os 8 dígitos
@@ -9,14 +11,14 @@ export default function SecuritySystem() {
   const [status, setStatus] = useState('locked'); // 'locked', 'success', 'error', 'partial_amanda', 'partial_gabriel'
   const [showDebug, setShowDebug] = useState(false);
 
-  const inputRefs = useRef([]);
+  const inputRefs = useRef<(HTMLInputElement | null)[]>([]);
 
   // Inicializa o array de refs
   useEffect(() => {
     inputRefs.current = inputRefs.current.slice(0, 8);
   }, []);
 
-  const handleChange = (index, value) => {
+  const handleChange = (index: number, value: string) => {
     if (!/^\d*$/.test(value)) return;
 
     const newInputs = [...inputs];
@@ -29,7 +31,7 @@ export default function SecuritySystem() {
     }
   };
 
-  const handleKeyDown = (index, e) => {
+  const handleKeyDown = (index: number, e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Backspace' && !inputs[index] && index > 0) {
       inputRefs.current[index - 1]?.focus();
     }
@@ -58,7 +60,7 @@ export default function SecuritySystem() {
     }
   };
 
-  const renderInput = (index, isAmanda) => {
+  const renderInput = (index: number, isAmanda: boolean) => {
     const isError = status === 'error';
     const isSuccess = status === 'success';
 
