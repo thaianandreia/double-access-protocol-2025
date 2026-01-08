@@ -163,10 +163,10 @@ export default function SecretAgencyAccessScreen() {
 
     if (status === 'amanda') {
       return (
-        <div className="rounded-2xl border border-pink-400/30 bg-pink-400/10 px-4 py-3 text-pink-200 shadow-[0_0_0_1px_rgba(244,114,182,0.10)]">
-          <div className="flex items-center gap-2 text-sm font-semibold tracking-wide">
+        <div className="rounded-2xl border border-emerald-400/30 bg-emerald-400/10 px-4 py-3 text-slate-200 =">
+          <div className="flex items-start gap-2 text-sm font-normal tracking-wide">
             <Lock className="h-4 w-4" />
-            Agente Amanda autenticado. Aguardando parceiro.
+            CHAVE ROSA autenticada. Aguardando segunda chave.
           </div>
         </div>
       )
@@ -174,10 +174,10 @@ export default function SecretAgencyAccessScreen() {
 
     if (status === 'gabriel') {
       return (
-        <div className="rounded-2xl border border-blue-300/30 bg-blue-300/10 px-4 py-3 text-blue-100 shadow-[0_0_0_1px_rgba(125,211,252,0.10)]">
-          <div className="flex items-center gap-2 text-sm font-semibold tracking-wide">
+        <div className="rounded-2xl border border-emerald-400/30 bg-emerald-400/10 px-4 py-3 text-slate-200 ">
+          <div className="flex items-start gap-2 text-sm font-normal tracking-wide">
             <Lock className="h-4 w-4" />
-            Agente Gabriel autenticado. Aguardando parceiro.
+            CHAVE AZUL autenticada. Aguardando segunda chave.
           </div>
         </div>
       )
@@ -187,9 +187,9 @@ export default function SecretAgencyAccessScreen() {
       return (
         <div
           key={shakeKey}
-          className="animate-shake rounded-2xl border border-red-500/30 bg-red-500/10 px-4 py-3 text-red-200 shadow-[0_0_0_1px_rgba(239,68,68,0.10)]"
+          className="rounded-lg border border-red-500/30 mt-2 bg-red-500/10 px-4 py-3 text-sllate-200 "
         >
-          <div className="flex items-center gap-2 text-sm font-semibold tracking-wide">
+          <div className="flex items-center gap-2 text-sm font-normal tracking-wide">
             <AlertTriangle className="h-4 w-4" />
             CÓDIGO INVÁLIDO. TENTATIVA REGISTRADA.
           </div>
@@ -197,14 +197,6 @@ export default function SecretAgencyAccessScreen() {
       )
     }
 
-    return (
-      <div className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-slate-200">
-        <div className="flex items-center gap-2 text-sm font-semibold tracking-wide">
-          <Shield className="h-4 w-4 text-slate-200/80" />
-          INSIRA AS DUAS CHAVES PARA INICIAR O PROTOCOLO
-        </div>
-      </div>
-    )
   })()
 
   return (
@@ -220,8 +212,8 @@ export default function SecretAgencyAccessScreen() {
         <div className="absolute -inset-8 bg-[radial-gradient(circle_at_20%_20%,rgba(255,255,255,0.08),transparent_35%),radial-gradient(circle_at_80%_70%,rgba(255,255,255,0.06),transparent_35%),radial-gradient(circle_at_60%_30%,rgba(255,255,255,0.05),transparent_35%)] blur-[1px] animate-grainDrift" />
       </div>
 
-      <div className="relative z-10 mx-auto flex min-h-screen max-w-3xl flex-col justify-center px-5 py-12">
-        <div className="relative rounded-3xl border border-white/10 bg-white/5 p-6 shadow-[0_0_0_1px_rgba(255,255,255,0.05),0_30px_120px_rgba(0,0,0,0.65)] backdrop-blur-2xl sm:p-8">
+      <div className="relative z-10 mx-auto flex min-h-screen max-w-3xl flex-col justify-center px-4 py-8 sm:px-5 sm:py-12">
+        <div className="relative rounded-3xl border border-white/10 bg-white/5 p-5 shadow-[0_0_0_1px_rgba(255,255,255,0.05),0_30px_120px_rgba(0,0,0,0.65)] backdrop-blur-2xl sm:p-8">
           <div className="pointer-events-none absolute -inset-px rounded-3xl bg-[linear-gradient(120deg,rgba(236,72,153,0.18),transparent_35%,rgba(56,189,248,0.18))] opacity-80 blur-[10px]" />
           <div className="pointer-events-none absolute inset-0 rounded-3xl border border-white/10" />
           <div className="pointer-events-none absolute left-3 top-3 h-6 w-6 rounded-tl-2xl border-l border-t border-white/25" />
@@ -231,20 +223,24 @@ export default function SecretAgencyAccessScreen() {
 
           <div className="flex flex-col gap-6">
             <header className="flex flex-col gap-2">
-              <div className="flex items-center justify-between gap-4">
-                <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-slate-950/40 px-3 py-1 text-xs font-semibold tracking-[0.22em] text-slate-200">
+              <div className="flex flex-col gap-2 justify-center w-full items-center sm:flex-row sm:items-center sm:justify-between sm:gap-4">
+                <div className="w-fit flex justify-center items-center gap-2 rounded-full border border-white/10 bg-slate-950/40 px-3 py-1 text-xs font-semibold tracking-[0.22em] text-slate-200">
                   <Shield className="h-4 w-4 text-blue-200/80" />
                   AGÊNCIA SECRETA
                 </div>
-                <div className="text-xs font-semibold tracking-[0.22em] text-slate-400">ID 2025-004</div>
+               
               </div>
+                 <div className="text-xs text-right font-semibold tracking-[0.22em] text-slate-400 sm:text-right">ID 2025-004</div>
 
-              <h1 className="text-balance text-2xl font-semibold tracking-[0.22em] text-slate-100 sm:text-3xl">
+              <h1 className="text-balance text-xl font-semibold tracking-[0.18em] text-slate-100 sm:text-3xl sm:tracking-[0.22em]">
                 OPERAÇÃO NOITE FELIZ
               </h1>
-              <div className="flex flex-wrap items-center justify-between gap-3">
-                <p className="text-sm text-slate-300/90">Autenticação dupla necessária. Duas chaves, um único destino.</p>
-                <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-slate-950/35 px-3 py-1 font-mono text-[11px] tracking-[0.22em] text-slate-300/90 animate-hudFlicker">
+              <h2 className="text-balance text-sm font-normal tracking-[0.18em] text-slate-200 sm:text-xl sm:tracking-[0.22em]">
+                Protocolo de acesso duplo
+              </h2>
+              <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+               
+                <div className="w-fit inline-flex items-center gap-2 rounded-full border border-white/10 bg-slate-950/35 px-3 py-1 font-mono text-[11px] tracking-[0.22em] text-slate-300/90 animate-hudFlicker">
                   <span className="h-1.5 w-1.5 rounded-full bg-blue-300/80 shadow-[0_0_18px_rgba(56,189,248,0.7)] animate-glowPulse" />
                   LINK ATIVO
                 </div>
@@ -304,10 +300,14 @@ export default function SecretAgencyAccessScreen() {
                 </div>
               </div>
 
+              <div className="min-h-[3.5rem] flex flex-col justify-end">
+                {statusBlock}
+              </div>
+
               <button
                 type="button"
                 onClick={validate}
-                className="group relative overflow-hidden rounded-2xl bg-gradient-to-r from-pink-500/15 via-slate-950/15 to-blue-400/15 px-5 py-4 text-left  shadow-slate-900 shadow-md hover:shadow-lg hover:shadow-slate-900 backdrop-blur-xl transition  hover:bg-slate-200/10 active:translate-y-[1px] focus:outline-none "
+                className="group mt-2 relative w-full select-none overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-r from-pink-500/20 via-slate-950/20 to-blue-400/20 px-5 py-5 shadow-md shadow-slate-900 backdrop-blur-xl transition hover:border-white/20 hover:bg-slate-200/10 hover:shadow-lg hover:shadow-slate-900 active:translate-y-[1px] active:shadow-sm focus:outline-none"
               >
                 <span className="pointer-events-none absolute inset-0 opacity-70">
                   <span className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/35 to-transparent" />
@@ -315,23 +315,22 @@ export default function SecretAgencyAccessScreen() {
                 <span className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                   <span className="absolute -inset-y-6 left-0 w-1/3 bg-gradient-to-r from-transparent via-white/30 to-transparent blur-sm animate-shine" />
                 </span>
-                <span className="relative flex items-center justify-between gap-4">
-                  <span className="grid gap-1">
-                    <span className="text-[11px] font-semibold tracking-[0.28em] text-slate-200/80">PROTOCOLO</span>
-                    <span className="text-lg font-semibold tracking-[0.18em] text-slate-50">EXECUTAR PROTOCOLO</span>
+                <span className="relative flex justify-center  gap-4 sm:flex-row items-center sm:justify-between">
+                  <span className="grid gap-1 text-left">
+                    <span className="text-md font-normal leading-tight tracking-[0.14em] text-slate-50 sm:text-xl sm:tracking-[0.18em]">
+                      EXECUTAR PROTOCOLO
+                    </span>
                   </span>
-                  <span className="grid h-12 w-12 place-items-center rounded-xl border border-blue-200/25 bg-blue-300/10 text-blue-50 shadow-[inset_0_0_0_1px_rgba(56,189,248,0.10)]">
                     <Lock className="h-5 w-5" />
-                  </span>
                 </span>
               </button>
-
-              {statusBlock}
             </div>
 
-            <div className="flex items-center justify-between gap-4 text-xs text-slate-400">
-              <span className="font-mono tracking-[0.18em]">CANAL: CRIPTOGRAFADO</span>
-              <span className="font-mono tracking-[0.18em]">SESSÃO: {sessionTag}</span>
+            <div className="flex flex-col gap-2 text-right mt-3 text-xs text-slate-400 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
+              <span className="font-mono tracking-[0.14em] sm:tracking-[0.18em]">CANAL: CRIPTOGRAFADO</span>
+              <span className="break-all font-mono tracking-[0.14em] sm:text-right sm:tracking-[0.18em]">
+                SESSÃO: {sessionTag.slice(0, 5)}-{sessionTag.slice(5, 10)}-{sessionTag.slice(10)}
+              </span>
             </div>
           </div>
         </div>
